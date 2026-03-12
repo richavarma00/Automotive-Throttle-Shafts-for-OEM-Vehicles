@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Automotive Throttle Shafts for OEM Vehicles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0d1b2a;
+      --paper: #eef2f7;
+      --steel: #1a3a5c;
+      --accent: #1565c0;
+      --muted: #4a6080;
+      --rule: #b0bec5;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.85;
+      min-height: 100vh;
+      padding: 60px 20px;
+      background-image:
+        radial-gradient(ellipse at top right, #c9d8ee 0%, transparent 55%),
+        radial-gradient(ellipse at bottom left, #d8e4f0 0%, transparent 55%);
+    }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--rule);
+      box-shadow:
+        0 2px 6px rgba(0,0,0,0.06),
+        0 16px 48px rgba(21,101,192,0.10),
+        0 0 0 6px #fff,
+        0 0 0 7px var(--rule);
+      padding: 64px 72px;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .kicker {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--steel);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .byline {
+      font-size: 12.5px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 10px 0;
+      margin: 22px 0 32px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .image-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 0 36px;
+    }
+
+    .article-image {
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      border-top: 3px solid var(--accent);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    figcaption {
+      font-size: 11.5px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 10px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      max-width: 500px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--steel);
+      margin: 42px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin: 28px 0 10px;
+    }
+
+    p {
+      font-size: 1.02rem;
+      color: #1c2d3e;
+      margin-bottom: 20px;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .drop-cap::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      font-weight: 700;
+      float: left;
+      line-height: 0.78;
+      margin: 6px 10px 0 0;
+      color: var(--accent);
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .read-more:hover { color: var(--steel); border-color: var(--steel); }
+    .read-more::after { content: "→"; font-size: 1rem; }
+
+    .author-box {
+      margin-top: 48px;
+      padding: 24px 28px;
+      background: #f0f6ff;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .author-box strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--steel);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .author-box p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      text-align: left;
+    }
+
+    .author-box a { color: var(--accent); text-decoration: none; }
+    .author-box a:hover { text-decoration: underline; }
+
+    @media (max-width: 620px) {
+      .page-wrap { padding: 36px 22px; }
+      .article-image { width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <span class="kicker">OEM Automotive Engineering &amp; Throttle System Components</span>
+
+    <h1>Automotive Throttle Shafts for OEM Vehicles</h1>
+
+    <div class="byline">
+      <span>By <strong>Attri Tech Machines Pvt. Ltd.</strong></span>
+      <span>March 12, 2026 &nbsp;·&nbsp; 5 min read</span>
+    </div>
+
+    <div class="image-block">
+      <img
+        class="article-image"
+        src="automotive-throttle-shafts-oem.jpg"
+        alt="Automotive Throttle Shafts for OEM Vehicles"
+        width="500"
+        height="500"
+      />
+      <figcaption>Precision automotive throttle shafts undergoing micrometer dimensional inspection for OEM compliance — Attri Tech Machines Pvt. Ltd.</figcaption>
+    </div>
+
+    <h2>Understanding Automotive Throttle Shafts</h2>
+
+    <p class="drop-cap">The automotive throttle shaft is a precision-engineered component mounted within the throttle body of an internal combustion engine, where it rotates the throttle plate — also called the butterfly valve — to regulate the volume of air entering the intake manifold. When the driver presses the accelerator pedal, the throttle shaft rotates to open or close the air passage, directly influencing the engine's power output, efficiency, and response. Precision is fundamental: even minor deviations in diameter, straightness, or surface finish result in binding, excessive wear, or inconsistent airflow. High-quality throttle shafts maintain tight tolerances and smooth finishes to deliver reliable, long-term performance across every driving condition.</p>
+
+    <p>In modern vehicles with electronic throttle control and drive-by-wire systems, accurate throttle shaft operation also ensures proper air-fuel mixture, stable idle, and precise engine response — making the component essential not only mechanically, but also within the engine's electronic management architecture.</p>
+
+    <h2>Performance, Emissions &amp; Material Selection</h2>
+
+    <p>Throttle shafts play a vital role in emissions compliance — precise airflow control maintains optimal combustion, reducing harmful emissions and helping vehicles meet stringent environmental regulations. Durability is equally important: high-quality materials and precise machining reduce wear and prevent premature failure, a priority for OEM manufacturers delivering long-lasting, trouble-free vehicles. Stainless steel is widely preferred for its strength, corrosion resistance, and smooth surface finish. Hardened steel excels under continuous mechanical stress. For high-performance applications, specialized coatings and surface treatments further reduce friction and wear — each material choice matched to the operating temperature, load conditions, and expected service life of the specific engine application.</p>
+
+    <h3>Manufacturing Process &amp; Quality Control</h3>
+
+    <p>Production begins with cutting raw material into accurate blanks, then CNC machining to achieve exact dimensions, tolerances, and straightness. Surface finishing — grinding, polishing, anti-corrosion coatings, and heat treatments — reduces friction between shaft and throttle plate while improving durability. Every shaft undergoes rigorous inspection measuring dimensional accuracy, straightness, surface finish, and rotational smoothness against stringent OEM requirements. Advanced quality control reduces warranty claims, improves customer satisfaction, and extends vehicle service life — ensuring each throttle shaft performs flawlessly from installation through thousands of operating cycles.</p>
+
+    <h2>OEM Applications &amp; Future Trends</h2>
+
+    <p>Automotive throttle shafts are essential across passenger cars, commercial trucks, high-performance sports vehicles, and heavy-duty equipment — wherever precise engine control and emissions compliance are required. In modern fuel-injected engines, the shaft works directly with sensors and the ECU to maintain optimal air-fuel ratios under varying driving conditions. As automotive technology evolves with hybrid systems, stricter emission norms, and lighter vehicle architectures, manufacturers are exploring advanced lightweight materials, low-friction coatings, and smart manufacturing technologies — ensuring automotive throttle shafts continue meeting the performance, efficiency, and reliability standards of next-generation OEM vehicles.</p>
+
+    <h3>Attri Tech Machines Pvt. Ltd. — Trusted OEM Throttle Shaft Manufacturer</h3>
+
+    <p>Attri Tech Machines Pvt. Ltd. is a global supplier and leading manufacturer exporter of automotive throttle shafts for OEM vehicles worldwide. With years of precision engineering experience, advanced manufacturing capabilities, skilled engineering teams, and strict quality control, the company produces throttle shafts that ensure smooth operation, durability, and full compliance with industry regulations — supporting vehicle manufacturers globally in delivering high-quality, reliable automotive systems that meet modern driver expectations.</p>
+
+    <a class="read-more" href="https://attritechmachines.com/automotive-throttle-shaft-for-oem-and-aftermarket-applications/" target="_blank" rel="noopener">
+      View Product Details at Attri Tech Machines
+    </a>
+
+    <div class="author-box">
+      <strong>Attri Tech Machines Pvt. Ltd.</strong>
+      <p>Plot No. 10 &amp; 11, Gopal Industrial Compound, Meerut Road Industrial Area, Ghaziabad, UP – 201001, India</p>
+      <p>Phone: +91-120-2701600 &nbsp;|&nbsp; Email: attritechmachines@gmail.com</p>
+      <p>Website: <a href="https://attritechmachines.com" target="_blank" rel="noopener">www.attritechmachines.com</a></p>
+    </div>
+
+  </div>
+</body>
+</html>
